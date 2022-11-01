@@ -35,14 +35,6 @@ function setup_input_event_listeners()
     document.getElementById('tweetContent').predefinedValue = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ex odio, viverra aliquet purus sit amet, pellentesque ultricies metus.';
 }
 
-function copy_values_to_image()
-{
-    document.getElementById('imageAccountName').innerText = document.getElementById('accountName').value;
-    document.getElementById('imageAccountUsername').innerText = document.getElementById('accountUsername').value;
-    document.getElementById('imageAccountPicture').src = document.getElementById('accountPicture').value;
-    document.getElementById('imageTweetContent').innerText = document.getElementById('tweetContent').value;
-}
-
 function save_as(uri, filename) {
 
     var link = document.createElement('a');
@@ -64,8 +56,6 @@ function save_as(uri, filename) {
 
 function download_image()
 {
-    copy_values_to_image();
-
     html2canvas(document.getElementById('canvas'), 
         { 
             scale: 4, 
