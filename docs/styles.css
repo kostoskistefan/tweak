@@ -51,12 +51,19 @@ body {
     line-height: 0.875rem;
 }
 
-.twitter-icon {
-    color: rgb(29, 161, 242);
-    width: calc(var(--size-unit) * 0.175);
-    height: calc(var(--size-unit) * 0.175);
+.social-media-icon {
+    width: calc(var(--size-unit) * 0.2);
+    height: calc(var(--size-unit) * 0.2);
 }
 
 .main-content {
     font-size: calc(var(--size-unit) * 0.111363636);
+}
+
+.form-floating > label {
+    color: #404040;
+}
+
+#content {
+    height: 200px;
 }

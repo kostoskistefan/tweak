@@ -16,23 +16,37 @@ function input_src_reflect(e)
         e.target.reflect.src = e.target.predefinedValue;
 }
 
+function change_social_media_icon(e)
+{
+    document.getElementById('twitter-icon').hidden = (e.target.value != 'twitter');    
+    document.getElementById('instagram-icon').hidden = (e.target.value != 'instagram');    
+}
+
 function setup_input_event_listeners() 
 {
-    document.getElementById('accountName').addEventListener('input', input_text_reflect);
-    document.getElementById('accountName').reflect = document.getElementById('imageAccountName');
-    document.getElementById('accountName').predefinedValue = 'Account Name';
+    let accountName = document.getElementById('accountName');
+    let accountUsername = document.getElementById('accountUsername');
+    let accountPicture = document.getElementById('accountPicture');
+    let iconType = document.getElementById('iconType');
+    let content = document.getElementById('content');
 
-    document.getElementById('accountUsername').addEventListener('input', input_text_reflect);
-    document.getElementById('accountUsername').reflect = document.getElementById('imageAccountUsername');
-    document.getElementById('accountUsername').predefinedValue = '@username';
+    accountName.addEventListener('input', input_text_reflect);
+    accountName.reflect = document.getElementById('imageAccountName');
+    accountName.predefinedValue = 'Account Name';
 
-    document.getElementById('accountPicture').addEventListener('input', input_src_reflect);
-    document.getElementById('accountPicture').reflect = document.getElementById('imageAccountPicture');
-    document.getElementById('accountPicture').predefinedValue = 'https://cdn-icons-png.flaticon.com/512/5111/5111693.png';
+    accountUsername.addEventListener('input', input_text_reflect);
+    accountUsername.reflect = document.getElementById('imageAccountUsername');
+    accountUsername.predefinedValue = '@username';
 
-    document.getElementById('tweetContent').addEventListener('input', input_text_reflect);
-    document.getElementById('tweetContent').reflect = document.getElementById('imageTweetContent');
-    document.getElementById('tweetContent').predefinedValue = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ex odio, viverra aliquet purus sit amet, pellentesque ultricies metus.';
+    accountPicture.addEventListener('input', input_src_reflect);
+    accountPicture.reflect = document.getElementById('imageAccountPicture');
+    accountPicture.predefinedValue = 'https://cdn-icons-png.flaticon.com/512/5111/5111693.png';
+
+    iconType.addEventListener('change', change_social_media_icon);
+
+    content.addEventListener('input', input_text_reflect);
+    content.reflect = document.getElementById('imageTweetContent');
+    content.predefinedValue = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ex odio, viverra aliquet purus sit amet, pellentesque ultricies metus.';
 }
 
 function save_as(uri, filename) {

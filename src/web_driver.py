@@ -21,7 +21,7 @@ def create_image(tweetContent):
     driver.find_element(By.ID, 'accountName').send_keys(tweetContent['includes']['users'][0]['name'])
     driver.find_element(By.ID, 'accountUsername').send_keys("@" + tweetContent['includes']['users'][0]['username'])
     driver.find_element(By.ID, 'accountPicture').send_keys(tweetContent['includes']['users'][0]['profile_image_url'])
-    driver.find_element(By.ID, 'tweetContent').send_keys(tweetContent['data']['text'])
+    driver.find_element(By.ID, 'content').send_keys(tweetContent['data']['text'])
     driver.find_element(By.ID, 'submitButton').click()
 
 
